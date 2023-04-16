@@ -22,7 +22,12 @@ jobs:
         echo " app name is : ${{ env.MY_APPLICATION_NAME }} "
     - name : list
       run : ls -la
-  
+      
+    - name: Git clone my repo
+      uses: actions/checkout@v1   
+      
+    - name : list
+      run : ls -la
   
   
   second-job:
