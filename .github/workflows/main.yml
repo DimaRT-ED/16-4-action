@@ -1,5 +1,7 @@
 name: First-Action 
-
+env: 
+  MY_APPLICATION_NAME    : "My_Flask"
+  MY_DEPLOY_PACKAGE_NAME : "flask-deploy-ver-${{ github.sha }}"
 on: 
   push: 
     branches: master
@@ -15,8 +17,10 @@ jobs:
       
     - name: multy command step
       run: |
-        ech "Hello from MULTY"
+        echo "Hello from MULTY"
         git -v
+        echo " app name is : ${{ env.MY_APPLICATION_NAME }} "
+        
         
   
   
@@ -28,5 +32,10 @@ jobs:
     steps:
     - name: Print hello msg
       run : echo "Hello from second job"
+      
+    - name : Print environment
+      run : |
+        echo " App name is : ${{ env.MY_APPLICATION_NAME }} "
+        echo " Package name : ${{ env.MY_DEPLOY_PACKAGE_NAME }}"
   
   
