@@ -13,6 +13,12 @@ jobs:
   
     steps:
     
+    - name: export env
+      run: |
+        export MY_DEPLOY_PACKAGE_NAME="NEW_DEPLOY_NAME"
+        echo " Package name : ${{ env.MY_DEPLOY_PACKAGE_NAME }}"
+        echo " AND : $MY_DEPLOY_PACKAGE_NAME"
+    
     - name: CHECK SECRETS
       run : |
         if [ "${{ secrets.SECRET_1 }}" == "${{ secrets.SECRET_2 }}" ]; then
