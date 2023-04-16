@@ -28,6 +28,11 @@ jobs:
       
     - name : list
       run : ls -la
+      
+    - name : cat file1
+      run: |
+        cat 1.txt
+        cat 2.txt
   
   
   second-job:
