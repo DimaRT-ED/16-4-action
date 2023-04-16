@@ -15,7 +15,7 @@ jobs:
     
     - name: CHECK SECRETS
       run : |
-        if [ "${{ secrets.SECRET_1 }}" == "${{ secrets.SECRET_3 }}" ]; then
+        if [ "${{ secrets.SECRET_1 }}" == "${{ secrets.SECRET_2 }}" ]; then
           echo "good"
         else
           echo "bad"
