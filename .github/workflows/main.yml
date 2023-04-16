@@ -21,15 +21,18 @@ jobs:
         git -v
         echo " app name is : ${{ env.MY_APPLICATION_NAME }} "
         
-        
   
   
   
   second-job:
     runs-on: ubuntu-latest
     needs: [ first-job ]
-    
+    env:
+      VAR1 : "This is Job Level Variable-1"
+      VAR2 : "This is Job Level Variable-2"
+      
     steps:
+
     - name: Print hello msg
       run : echo "Hello from second job"
       
@@ -37,5 +40,10 @@ jobs:
       run : |
         echo " App name is : ${{ env.MY_APPLICATION_NAME }} "
         echo " Package name : ${{ env.MY_DEPLOY_PACKAGE_NAME }}"
+        echo " VAR1 :  ${{ env.VAR1 }}"
+        echo " VAR2 :  ${{ env.VAR2 }}"
+        echo " local-var is $LOCAL_VAR"
+      env:
+        LOCAL_VAR: "This is Superr local Environment variable"
   
   
