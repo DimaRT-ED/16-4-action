@@ -13,6 +13,14 @@ jobs:
   
     steps:
     
+    - name: CHECK SECRETS
+      run : |
+        if [ "${{ secrets.SECRET_1 }}" == "${{ secrets.SECRET_3 }}" ]; then
+          echo "good"
+        else
+          echo "bad"
+        fi
+    
     - name : PRINT SECRETs
       run: |
         echo "sec-1: ${{ secrets.SECRET_1 }}"
