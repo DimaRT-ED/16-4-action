@@ -12,8 +12,12 @@ jobs:
     steps:
     - name: Print Hello Message in First Job
       run : echo "Hello World from First job"
-  
-  
+      
+    - name: multy command step
+      run: |
+        echo "Hello from MULTY"
+        git -v
+        
   
   
   
