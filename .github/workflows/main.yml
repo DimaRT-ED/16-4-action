@@ -1,0 +1,20 @@
+name: First-Action 
+
+on: 
+  push: 
+    branches: master
+    
+jobs: 
+
+  first-job:
+  runs-on: ubuntu-latest
+  
+  steps:
+  - name: Print Hello Message in First Job
+    run : echo "Hello World from First job"
+  
+  
+  
+  
+  
+  
