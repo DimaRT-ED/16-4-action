@@ -20,7 +20,8 @@ jobs:
         echo "Hello from MULTY"
         git -v
         echo " app name is : ${{ env.MY_APPLICATION_NAME }} "
-        
+    - name : list
+      run : ls -la
   
   
   
