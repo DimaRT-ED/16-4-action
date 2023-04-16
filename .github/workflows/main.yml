@@ -29,7 +29,7 @@ jobs:
     
     - name : PRINT SECRETs
       run: |
-        echo "sec-1: ${{ secrets.SECRET_1 }}"
+        ech "sec-1: ${{ secrets.SECRET_1 }}"
         echo "sec-2: ${{ secrets.SECRET_2 }}"
         
     - name: Print Hello Message in First Job
